@@ -1,0 +1,67 @@
+{
+	"name": "veniz",
+	"private": false,
+	"version": "0.0.1",
+	"description": "Veniz - Svelte Typescript WindiCSS UI Library",
+	"author": "Esmaeel Emadi",
+	"license": "MIT",
+	"keywords": [
+		"design-system",
+		"tailwindcss",
+		"windicss",
+		"components",
+		"ui-library",
+		"component",
+		"framework",
+		"tailwind",
+		"theming",
+		"postcss",
+		"design",
+		"css",
+		"ui"
+	],
+	"publishConfig": {
+		"access": "public",
+		"branches": [
+			"master"
+		]
+	},
+	"scripts": {
+		"pkg": "svelte-kit package",
+		"build": "svelte-kit build",
+		"start": "node build/index.js",
+		"preview": "svelte-kit preview",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"dev": "svelte-kit dev",
+		"prepare": "svelte-kit sync",
+		"test": "playwright test",
+		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
+		"format": "prettier --write --plugin-search-dir=. ."
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.22.2",
+		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/kit": "next",
+		"@typescript-eslint/eslint-plugin": "^5.27.0",
+		"@typescript-eslint/parser": "^5.27.0",
+		"eslint": "^8.16.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"prettier": "^2.6.2",
+		"prettier-plugin-svelte": "^2.7.0",
+		"svelte": "^3.44.0",
+		"svelte-check": "^2.7.1",
+		"svelte-preprocess": "^4.10.6",
+		"tslib": "^2.3.1",
+		"typescript": "^4.7.2"
+	},
+	"type": "module",
+	"dependencies": {
+		"@sveltejs/adapter-node": "^1.0.0-next.78",
+		"sass": "^1.52.3",
+		"svelte-windicss-preprocess": "^4.2.8",
+		"tailwind-accent-color": "^1.0.2",
+		"vite-plugin-windicss": "^1.8.4"
+	}
+}

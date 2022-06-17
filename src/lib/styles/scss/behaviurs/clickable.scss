@@ -1,0 +1,31 @@
+$variants: primary;
+
+.clickable {
+ 	transition-property: all; 
+  transition-timing-function: ease-in-out;
+  transition-duration: 100ms !important;
+
+	&:hover {
+		@apply shadow-lg;
+	}
+	&:active { 
+		@apply scale-95
+	}
+
+
+	// &.wait { 
+	// 		@apply shadow-none;
+	// 		@apply pointer-events-none;
+	// 		@apply scale-100; // what is this ???
+	// }
+
+	// &:disabled {
+	// 	@apply filter;
+	// 	@apply saturate-50;
+	// 	@apply cursor-not-allowed;
+	// 	@apply opacity-40;
+	// 	&:hover {
+	// 		@apply shadow-none;
+	// 	}
+	// }
+}

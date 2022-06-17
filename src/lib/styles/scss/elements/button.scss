@@ -1,0 +1,22 @@
+button { 
+	@each $variant in $variants {
+		&.#{$variant} {
+
+			@apply transition;
+			@apply duration-100;
+			@apply ease-in-out;
+
+			@apply text-white;
+			@apply bg-#{$variant}-500;
+			&:hover:not(:disabled):no(.wait) {
+				@apply bg-#{$variant}-900;
+			}
+			&:hover {
+			@apply	bg-#{$variant}-900;
+			}
+		}
+	}
+
+	@apply clickable;
+	@apply el; 
+}
