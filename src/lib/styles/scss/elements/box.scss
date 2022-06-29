@@ -1,0 +1,11 @@
+@import "./base.scss";
+
+
+div .box{ 
+	@extend .el; 
+
+	@apply prose;
+	@apply relative;
+	@apply prose-base;
+	@apply text-lg;
+}

@@ -1,0 +1,12 @@
+.clickable {
+	transition-property: all;
+	transition-timing-function: ease-in-out;
+	transition-duration: 100ms !important;
+
+	// &:hover:not(:disabled){
+	// 	@apply shadow-lg;
+	// }
+	&:active {
+		@apply scale-95;
+	}
+}

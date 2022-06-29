@@ -1,5 +1,20 @@
-.el { 
-		 	@apply transform;
-		 	@apply transition;
-		 	@apply duration-75;
+.el {
+	// @apply transform;
+	// @apply transition;
+	// @apply duration-75;
+
+	@apply text-xl;
+
+	&:disabled {
+		@apply cursor-not-allowed;
+		@apply shadow-none;
+	}
+
+
+	@each $variant in $variants {
+		&.#{$variant} {
+			@apply text-#{$variant}-500;
+		}
+	}
 }
+

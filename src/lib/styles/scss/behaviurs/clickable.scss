@@ -1,19 +1,20 @@
-$variants: primary;
-
 .clickable {
- 	transition-property: all; 
-  transition-timing-function: ease-in-out;
-  transition-duration: 100ms !important;
+	transition-property: all;
+	transition-timing-function: ease-in-out;
+	transition-duration: 100ms !important;
+
+	&:disabled { 
+		@apply cursor-not-allowed;
+	}
 
 	&:hover {
 		@apply shadow-lg;
 	}
-	&:active { 
-		@apply scale-95
+	&:active {
+		@apply scale-95;
 	}
 
-
-	// &.wait { 
+	// &.wait {
 	// 		@apply shadow-none;
 	// 		@apply pointer-events-none;
 	// 		@apply scale-100; // what is this ???

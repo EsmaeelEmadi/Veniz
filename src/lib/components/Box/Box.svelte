@@ -1,15 +1,28 @@
 <script lang="ts">
+	// TODO: add ONMOUSE eventes
+
 	// ╭──────────────────────────────────────────────────────────╮
 	// │ 	Imports                                                 │
 	// ╰──────────────────────────────────────────────────────────╯
 	import BaseComponent from '../BaseComponent/BaseComponent.svelte';
 	// types
-	import type { Events, El } from '../types';
-
+	import type { Events, El, Sizes, Variant } from '../types';
 	// ╭──────────────────────────────────────────────────────────╮
 	// │ 	Types                                                   │
 	// ╰──────────────────────────────────────────────────────────╯
-	type Props = Events & El;
+	/* type Props = Events & El; */
+	type Props = {
+		addClass?: string;
+		size?: Sizes;
+		variant?: Variant;
+		onHold?: boolean;
+		disabled?: boolean;
+	};
+
+	// ╭──────────────────────────────────────────────────────────╮
+	// │ 	Constants                                               │
+	// ╰──────────────────────────────────────────────────────────╯
+	const defClass = 'box';
 
 	// ╭──────────────────────────────────────────────────────────╮
 	// │ 	Exports                                                 │
@@ -17,7 +30,6 @@
 	export let props: Props = {};
 
 	// values
-	export let value: Props['value'] = props.value;
 	export let size: Props['size'] = props.size;
 	export let addClass: Props['addClass'] = '';
 	export let variant: Props['variant'] = props.variant;
@@ -25,40 +37,15 @@
 
 	// Events
 	export let onHold: Props['onHold'] = props.onHold;
-	// // mouse
-	export let onClick: Props['onClick'] = props.onClick;
-	export let onDBClick: Props['onDBClick'] = props.onDBClick;
-	export let onMouseOver: Props['onMouseOver'] = props.onMouseOver;
-	export let onMouseEnter: Props['onMouseEnter'] = props.onMouseEnter;
-	export let onMouseLeave: Props['onMouseLeave'] = props.onMouseLeave;
-	export let onMouseMove: Props['onMouseMove'] = props.onMouseMove;
-	export let onFocus: Props['onFocus'] = props.onMouseMove;
-	export let onContextMenu: Props['onContextMenu'] = props.onContextMenu;
 
 	// ╭──────────────────────────────────────────────────────────╮
 	// │ 	Functions                                               │
 	// ╰──────────────────────────────────────────────────────────╯
-	$: _class = `${addClass ?? ''} ${props.addClass ?? ''}`.trim();
+	$: _class = `${defClass} ${addClass ?? ''} ${props.addClass ?? ''}`.trim();
 </script>
 
-<BaseComponent
-	_t="button"
-	{_class}
-	_hasSpinner={$$slots.spinner}
-	{disabled}
-	{variant}
-	{size}
-	{onHold}
-	{onClick}
-	{onDBClick}
-	{onMouseOver}
-	{onMouseEnter}
-	{onMouseLeave}
-	{onMouseMove}
-	{onFocus}
-	{onContextMenu}
->
-	<slot>{value}</slot>
+<BaseComponent _t="div" {_class} _hasSpinner={$$slots.spinner} {disabled} {variant} {size} {onHold}>
+	<slot />
 
 	<svelte:fragment slot="spinner">
 		<slot name="spinner" />

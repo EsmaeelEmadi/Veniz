@@ -1,4 +1,14 @@
+@import "./base.scss";
+@import "./clickable.scss";
+
+
 button { 
+
+	@extend .clickable;
+	@extend .el; 
+
+	
+	&:not(:disabled) { 
 	@each $variant in $variants {
 		&.#{$variant} {
 
@@ -8,15 +18,36 @@ button {
 
 			@apply text-white;
 			@apply bg-#{$variant}-500;
-			&:hover:not(:disabled):no(.wait) {
-				@apply bg-#{$variant}-900;
+			&:hover:no(.wait) {
+				@apply bg-#{$variant}-600;
 			}
 			&:hover {
-			@apply	bg-#{$variant}-900;
+			@apply	bg-#{$variant}-600;
 			}
 		}
 	}
+	}
 
-	@apply clickable;
-	@apply el; 
+	@debug $theme-rounded;
+
+
+	@if $theme-rounded == true   { 
+		@apply	rounded-lg;
+	}
+		@apply  mb-1;
+		@apply 	py-2;
+		@apply 	px-5;
+		@apply 	ease-in-out;
+		@apply 	border-solid;
+		@apply 	items-center;
+		@apply 	justify-center;
+		@apply	focus:outline-none;
+		@apply	flex;
+
+	 .icon-right {
+		color: red;
+		@apply ml-1;
+	}
+
+
 }

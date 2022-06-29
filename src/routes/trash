@@ -1,12 +1,3 @@
-<script lang="ts">
-	import { OnHold, Box, Button, Spinner } from '$lib';
-	import Icon from '@iconify/svelte';
-	let value: string = 'asdf';
-	let onHold: boolean = true;
-</script>
-
-<Box>
-	<Button variant="primary" onClick={() => (onHold = !onHold)}>state {onHold}</Button>
 
 	<Button {value} />
 
@@ -30,19 +21,3 @@
 	<Button {onHold} size="xl" value="what">
 		<svelte:fragment slot="spinner">wait</svelte:fragment>
 	</Button>
-</Box>
-
-<Box {onHold}>
-	<Button size="sm" {value} variant="primary" props={{ onClick: () => console.log('oww') }}>
-		<Icon icon="mdi-light:home" class="mr-1" />
-		hello again
-	</Button>
-
-	<div>
-		<h1>hello</h1>
-		<h2>hello</h2>
-		<h3>hello</h3>
-		<h4>hello</h4>
-		<p>what are you doing</p>
-	</div>
-</Box>
