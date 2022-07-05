@@ -58,6 +58,7 @@
 		"svelte-check": "^2.7.1",
 		"svelte-preprocess": "^4.10.6",
 		"svelte-windicss-preprocess": "^4.2.8",
+		"svelte2tsx": "^0.5.11",
 		"tailwind-accent-color": "^1.0.2",
 		"tslib": "^2.3.1",
 		"typescript": "^4.7.2",
