@@ -1,0 +1,42 @@
+@import "./base.scss";
+@import "./clickable.scss";
+
+input[type='checkbox'] {
+		@extend .clickable;
+		@extend .el; 
+
+		@apply h-5;
+		@apply w-5;
+		@apply border-1;
+
+		&.xs {
+			@apply h-3;
+			@apply w-3;
+		}
+
+		&.sm {
+			@apply h-4;
+			@apply w-4;
+		}
+
+		&.md {
+			@apply h-5;
+			@apply w-5;
+		}
+
+		&.lg {
+			@apply h-6;
+			@apply w-6;
+		}
+
+		&.xl {
+			@apply h-7;
+			@apply w-7;
+		}
+
+		@each $variant in $variants {
+			&.#{$variant} {
+				@apply accent-#{$variant}-500;
+			}
+		}
+	}

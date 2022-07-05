@@ -1,0 +1,12 @@
+@import "./base.scss";
+@import "./clickable.scss";
+
+.veniz-label {
+		@extend .clickable;
+		@extend .el; 
+
+	&.disabled {
+		@apply cursor-not-allowed;
+		@apply shadow-none;
+	}
+}

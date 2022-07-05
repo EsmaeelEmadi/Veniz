@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '$lib/styles/scss/index.scss';
+	import '$lib/styles/index.scss';
 	import 'virtual:windi.css';
 </script>
 

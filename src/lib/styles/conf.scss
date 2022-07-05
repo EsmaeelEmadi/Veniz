@@ -1,0 +1,34 @@
+$theme-rounded: true;
+$variants: primary,default;
+
+.veniz { 
+	&.veniz-button,
+	&.veniz-checkbox { 
+		@each $variant in $variants {
+			&.#{$variant} {
+				@apply text-white;
+				@apply bg-#{$variant}-500;
+				@apply accent-#{$variant}-500;
+				@apply hover:bg-#{$variant}-600;
+			}
+		}
+	}
+	&.veniz-input { 
+		@each $variant in $variants {
+			&.#{$variant} {
+				@apply outline-#{$variant}-500;
+				@apply hover:outline-#{$variant}-600;
+			}
+		}
+	}
+}
+
+.veniz-checkbox-wrapper { 
+	@apply relative ; 
+	@apply max-w-max;
+	@apply flex items-center;
+	& > .veniz-label { 
+		@apply pl-2; 
+		@apply cursor-default;
+	}
+}

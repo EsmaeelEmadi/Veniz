@@ -1,5 +1,6 @@
 import { defineConfig } from 'windicss/helpers';
-import { windi, flat } from './src/lib/styles/theme';
+// import { windi, flat } from './src/lib/styles/theme';
+import { flat } from './src/lib/styles/theme';
 
 export default defineConfig({
 	darkMode: 'class',

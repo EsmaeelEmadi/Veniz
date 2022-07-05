@@ -40,8 +40,11 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"devDependencies": {
+		"@iconify/icons-mdi-light": "^1.2.1",
+		"@iconify/svelte": "^2.2.1",
 		"@playwright/test": "^1.22.2",
 		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-node": "^1.0.0-next.78",
 		"@sveltejs/kit": "next",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
@@ -50,17 +53,14 @@
 		"eslint-plugin-svelte3": "^4.0.0",
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
+		"sass": "^1.52.3",
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.7.1",
 		"svelte-preprocess": "^4.10.6",
-		"tslib": "^2.3.1",
-		"typescript": "^4.7.2",
-		"@iconify/icons-mdi-light": "^1.2.1",
-		"@iconify/svelte": "^2.2.1",
-		"@sveltejs/adapter-node": "^1.0.0-next.78",
-		"sass": "^1.52.3",
 		"svelte-windicss-preprocess": "^4.2.8",
 		"tailwind-accent-color": "^1.0.2",
+		"tslib": "^2.3.1",
+		"typescript": "^4.7.2",
 		"vite-plugin-windicss": "^1.8.4"
 	},
 	"type": "module"

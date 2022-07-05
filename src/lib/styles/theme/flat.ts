@@ -1,10 +1,10 @@
 import colors from '../palette';
 
-const { peterRiver: primary, concrete: secondary } = colors.flat;
+const { peterRiver: primary, concrete: _default } = colors.flat;
 
 export default {
 	white: '#fff',
 	black: '#000',
 	primary: primary,
-	secondary: secondary
+	default: _default
 };

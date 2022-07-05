@@ -1,4 +1,23 @@
 <script lang="ts">
+	/* <input type="button"> */
+	/* <input type="checkbox"> */
+	/* <input type="color"> */
+	/* <input type="date"> */
+	/* <input type="datetime-local"> */
+	/* <input type="file"> */
+	/* <input type="hidden"> */
+	/* <input type="image"> */
+	/* <input type="month"> */
+	/* <input type="radio"> */
+	/* <input type="range"> */
+	/* <input type="reset"> */
+	/* <input type="search"> */
+	/* <input type="submit"> */
+	/* <input type="tel"> */
+	/* <input type="time"> */
+	/* <input type="url"> */
+	/* <input type="week"> */
+
 	// ╭──────────────────────────────────────────────────────────╮
 	// │ 	Imports                                                 │
 	// ╰──────────────────────────────────────────────────────────╯
@@ -9,7 +28,7 @@
 	// ╭──────────────────────────────────────────────────────────╮
 	// │ 	Types                                                   │
 	// ╰──────────────────────────────────────────────────────────╯
-	type Props = Events & El;
+	type Props = Events & El & { label?: string };
 
 	// ╭──────────────────────────────────────────────────────────╮
 	// │ 	Exports                                                 │
@@ -22,6 +41,7 @@
 	export let addClass: Props['addClass'] = '';
 	export let variant: Props['variant'] = props.variant;
 	export let disabled: Props['disabled'] = props.disabled;
+	export let label: Props['label'] = props.label;
 
 	// Events
 	export let onHold: Props['onHold'] = props.onHold;
@@ -38,14 +58,17 @@
 	// ╭──────────────────────────────────────────────────────────╮
 	// │ 	Functions                                               │
 	// ╰──────────────────────────────────────────────────────────╯
-	$: _class = `${addClass ?? ''} ${props.addClass ?? ''}`.trim();
+	$: _class = `veniz-input ${addClass ?? ''} ${props.addClass ?? ''}`.trim();
 </script>
 
 <BaseComponent
-	_t="button"
+	_t="input"
 	{_class}
 	_hasSpinner={$$slots.spinner}
+	_hasTooltip={$$slots.tooltip}
+	_hasLabel={$$slots.label}
 	{disabled}
+	{label}
 	{variant}
 	{size}
 	{onHold}
@@ -60,7 +83,15 @@
 >
 	<slot>{value}</slot>
 
+	<svelte:fragment slot="tooltip">
+		<slot name="tooltip" />
+	</svelte:fragment>
+
 	<svelte:fragment slot="spinner">
 		<slot name="spinner" />
+	</svelte:fragment>
+
+	<svelte:fragment slot="label">
+		<slot name="label" />
 	</svelte:fragment>
 </BaseComponent>

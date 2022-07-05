@@ -1,0 +1,53 @@
+@import "./base.scss";
+@import "./clickable.scss";
+
+
+.veniz-input { 
+
+	@extend .clickable;
+	@extend .el; 
+
+	
+	&:not(:disabled) { 
+	@each $variant in $variants {
+		&.#{$variant} {
+
+			@apply transition;
+			@apply duration-100;
+			@apply ease-in-out;
+
+			// @apply text-white;
+			@apply outline;
+			@apply outline-2;
+			@apply outline-#{$variant}-500;
+			&:hover:no(.wait) {
+				@apply outline-#{$variant}-800;
+			}
+			&:hover {
+			@apply outline-#{$variant}-800;
+			}
+		}
+	}
+	}
+
+	@debug $theme-rounded;
+
+
+	@if $theme-rounded == true   { 
+		@apply	rounded-lg;
+	}
+		// @apply  mb-10;
+		@apply 	py-2;
+		@apply 	px-5;
+		@apply 	ease-in-out;
+		@apply 	items-center;
+		@apply 	justify-center;
+		// @apply	focus:outline-none;
+		@apply	flex;
+
+	 .icon-right {
+			@apply ml-1;
+		}
+
+
+}
